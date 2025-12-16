@@ -86,12 +86,7 @@
 
             {%- when 'title' -%}
               <div class="product__title" {{ block.shopify_attributes }}>
-                <h2>{{ product.title | escape }}</h2>
-                <a href="{{ product.url }}" class="product__title">
-                  <h2 class="h2">
-                    {{ product.title | escape }}
-                  </h2>
-                </a>
+                <h1 class="h2">{{ product.title | escape }}</h1>
               </div>
             {%- when 'price' -%}
               <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
@@ -783,52 +778,62 @@
 </div>
 
 <script>
-  $(document).ready(function() {
-      $('.product-single__description ul.tabs').each(function() {
-          var active, content, links = $(this).find('a');
-          active = links.first().addClass('active');
-          content = $(active.attr('href'));
-          links.not(':first').each(function() {
-              $($(this).attr('href')).hide()
-          });
-          $(this).find('a').click(function(e) {
-              active.removeClass('active');
-              content.hide();
-              active = $(this);
-              content = $($(this).attr('href'));
-              active.addClass('active');
-              content.show();
-              return !1
-          })
-      })
+  document.addEventListener('DOMContentLoaded', function() {
+    $('.product-single__description ul.tabs').each(function() {
+        var active, content, links = $(this).find('a');
+        active = links.first().addClass('active');
+        content = $(active.attr('href'));
+        links.not(':first').each(function() {
+            $($(this).attr('href')).hide()
+        });
+        $(this).find('a').click(function(e) {
+            active.removeClass('active');
+            content.hide();
+            active = $(this);
+            content = $($(this).attr('href'));
+            active.addClass('active');
+            e.preventDefault();
+        });
+    });
 
-       setInterval(function(){
-          function productViewCount(min, max) {
-              return Math.floor(Math.random() * (max - min + 1) + min)
-          }
-          let numberView = document.querySelector('.live-view');
-          const rndNum = productViewCount({{ min }} , {{ max }})
-              numberView.innerHTML = rndNum;
-      },{{ viewing_time }});
+    // Count down logic
+    var timer = setInterval(function() {
+        var quantity = parseInt($('.product__viewing-left .live-view').text());
+        var min = {{ min }};
+        var max = {{ max }};
+        var sold = {{ sold }};
+        if (quantity >= min && quantity <= max) {
+            $('.product__viewing-left .live-view').text(quantity - 1);
+        } else {
+             $('.product__viewing-left .live-view').text(max);
+        }
+        let numberView = document.querySelector('.live-view');
+        // Check if productViewCount is defined, otherwise define a simple fallback
+        if (typeof productViewCount === 'function') {
+            const rndNum = productViewCount(min, max);
+             if(numberView) numberView.innerHTML = rndNum;
+        }
+    }, {{ viewing_time }});
 
+    function productthumbs() {
+        $(".thumbnail-list-slick.list-unstyled").slick({
+          centerPadding: '0',
+          autoplay: false,
+          arrows: true,
+          slidesToShow: 5,
+          slidesToScroll: 1,
+          draggable: true,
+          infinite: true,
+          vertical: true,
+          verticalScrolling: true,
+          speed: 1000,
+          autoplaySpeed: 2000,
+        });
+    }
+    
+    // Call productthumbs usage safely
+    productthumbs();
   });
-
-  function productthumbs() {
-      $(".thumbnail-list-slick.list-unstyled").slick({
-        centerPadding: '0',
-        autoplay: false,
-        arrows: true,
-        slidesToShow: 5,
-        slidesToScroll: 1,
-        draggable: true,
-        infinite: true,
-        vertical: true,
-        verticalScrolling: true,
-        speed: 1000,
-        autoplaySpeed: 2000,
-      });
-  }
-  $(document).ready(productthumbs);
 </script>
 
 {% schema %}
