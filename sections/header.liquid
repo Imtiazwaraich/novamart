@@ -755,6 +755,7 @@
   });
 </script>
 <script>
+  <script src="{{ 'debounce.js' | asset_url }}"></script>
   function responsivecolumn(){
     if ($(document).width() <= 989)
       {
@@ -768,7 +769,9 @@
       }
   }
   $(document).ready(function(){responsivecolumn();});
-  $(window).resize(function(){responsivecolumn();});
+  $(window).resize(debounce(function(){
+      responsivecolumn();
+  }, 250));
 </script>  
                     
 
