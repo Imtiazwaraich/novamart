@@ -754,7 +754,6 @@
     });
   });
 </script>
-<script src="{{ 'debounce.js' | asset_url }}"></script>
 <script>
   function responsivecolumn(){
     if ($(document).width() <= 989)
@@ -769,9 +768,7 @@
       }
   }
   $(document).ready(function(){responsivecolumn();});
-  $(window).resize(debounce(function(){
-      responsivecolumn();
-  }, 250));
+  $(window).resize(function(){responsivecolumn();});
 </script>  
                     
 

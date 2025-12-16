@@ -64,58 +64,47 @@ function horizontalScroll() {
   });
   horizontalScrollInitialized = true;
 }
+$(document).ready(function () {
+  horizontalScroll();
+});
+$(window).resize(function () {
+  horizontalScroll();
+});
 
-document.addEventListener('DOMContentLoaded', function () {
-  $(document).ready(function () {
-    horizontalScroll();
-  });
-
-  // Check if debounce exists
-  if (typeof debounce === 'function') {
-    $(window).resize(debounce(function () {
-      horizontalScroll();
-    }, 250));
-  } else {
-    $(window).resize(function () {
-      horizontalScroll();
+// grid-list
+$(document).ready(function () {
+  $(".btn-group").each(function () {
+    var active,
+      content,
+      links = $(this).find("a");
+    active = links.first().addClass("active");
+    content = $(active.attr("href"));
+    links.not(":first").each(function () {
+      $($(this).attr("href")).hide();
     });
-  }
-
-  // grid-list
-  $(document).ready(function () {
-    $(".btn-group").each(function () {
-      var active,
-        content,
-        links = $(this).find("a");
-      active = links.first().addClass("active");
-      content = $(active.attr("href"));
-      links.not(":first").each(function () {
-        $($(this).attr("href")).hide();
+    $(this)
+      .find("a")
+      .click(function (e) {
+        active.removeClass("active");
+        content.hide();
+        active = $(this);
+        content = $($(this).attr("href"));
+        active.addClass("active");
+        content.show();
+        return false;
       });
-      $(this)
-        .find("a")
-        .click(function (e) {
-          active.removeClass("active");
-          content.hide();
-          active = $(this);
-          content = $($(this).attr("href"));
-          active.addClass("active");
-          content.show();
-          return false;
-        });
-    });
   });
-  $(document).ready(function () {
-    $("#col_1").click(function (event) {
-      event.preventDefault();
-      $("#product-grid .grid__item").removeClass("");
-      $("#product-grid .grid__item").addClass("list-group-item");
-    });
-    $("#col_2").click(function (event) {
-      event.preventDefault();
-      $("#product-grid .grid__item").removeClass("list-group-item");
-      $("#product-grid .grid__item").addClass("");
-    });
+});
+$(document).ready(function () {
+  $("#col_1").click(function (event) {
+    event.preventDefault();
+    $("#product-grid .grid__item").removeClass("");
+    $("#product-grid .grid__item").addClass("list-group-item");
+  });
+  $("#col_2").click(function (event) {
+    event.preventDefault();
+    $("#product-grid .grid__item").removeClass("list-group-item");
+    $("#product-grid .grid__item").addClass("");
   });
 });
 
