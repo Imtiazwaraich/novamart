@@ -28,7 +28,12 @@ function countDownIni(countdown) {
 countDownIni(".flip-countdown,.js-flip-countdown");
 
 /* Scroll Horizontally */
+// Flag to prevent duplicate listeners
+var horizontalScrollInitialized = false;
+
 function horizontalScroll() {
+  if (horizontalScrollInitialized) return;
+  
   const stickyContainer = document.querySelectorAll(".stickyscroll");
   var scrollingHorizontally = [];
   stickyContainer.forEach(function (postScroll, index) {
@@ -57,6 +62,7 @@ function horizontalScroll() {
       });
     }
   });
+  horizontalScrollInitialized = true;
 }
 $(document).ready(function () {
   horizontalScroll();
