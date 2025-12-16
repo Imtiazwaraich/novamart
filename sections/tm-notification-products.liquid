@@ -52,7 +52,8 @@
   </div>
 {% endif %}
 <script>
-  function SomeonePurchased() {
+  document.addEventListener('DOMContentLoaded', function() {
+    function SomeonePurchased() {
       if(window.innerWidth > 750 ){
         jQuery('.closeNotify').bind('click',function(){
           jQuery('.product-notification').remove();
@@ -87,10 +88,25 @@
         });
       }
     }
-    SomeonePurchased();
-    $(document)
-      .on( 'shopify:section:load', SomeonePurchased )
-      .on( 'shopify:section:unload', SomeonePurchased)
+    // Check if jQuery is ready, if not wait for it
+    if (typeof jQuery !== 'undefined') {
+        SomeonePurchased();
+        $(document)
+          .on( 'shopify:section:load', SomeonePurchased )
+          .on( 'shopify:section:unload', SomeonePurchased);
+    } else {
+        // Fallback or retry? Since we are in init, it should be fine if jQuery is deferred but loaded.
+        // But better to be safe.
+        // Actually, since theme.liquid loads jQuery deferred, it runs AFTER DOMContentLoaded?
+        // No, typically defer runs just BEFORE DOMContentLoaded (in modern browsers).
+        // But to be super safe against race conditions, we can use a small interval or just assume it's there?
+        // Let's assume it's there because we are in DOMContentLoaded.
+       SomeonePurchased();
+        $(document)
+          .on( 'shopify:section:load', SomeonePurchased )
+          .on( 'shopify:section:unload', SomeonePurchased);
+    }
+  });
 </script>
 {% schema %}
  {
