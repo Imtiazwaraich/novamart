@@ -714,11 +714,32 @@
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
-    "@type": "Organization",
+    "@type": ["Organization", "LocalBusiness"],
     "name": {{ shop.name | json }},
     {% if settings.logo %}
       "logo": {{ settings.logo | image_url: width: 500 | prepend: "https:" | json }},
     {% endif %}
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dubai",
+      "addressRegion": "Dubai",
+      "addressCountry": "AE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "25.2048",
+      "longitude": "55.2708"
+    },
+    "areaServed": [
+      {"@type": "City", "name": "Dubai"},
+      {"@type": "City", "name": "Abu Dhabi"},
+      {"@type": "City", "name": "Sharjah"},
+      {"@type": "City", "name": "Ajman"},
+      {"@type": "City", "name": "Umm Al Quwain"},
+      {"@type": "City", "name": "Ras Al Khaimah"},
+      {"@type": "City", "name": "Fujairah"}
+    ],
+    "priceRange": "$$",
     "sameAs": [
       {{ settings.social_twitter_link | json }},
       {{ settings.social_facebook_link | json }},
