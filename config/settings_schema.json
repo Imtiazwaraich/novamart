@@ -1448,12 +1448,6 @@
       },
       {
         "type": "text",
-        "id": "facebook_app_id",
-        "label": "Facebook App ID",
-        "info": "Enter your Facebook App ID or Pixel ID for Facebook Insights and proper Open Graph integration"
-      },
-      {
-        "type": "text",
         "id": "social_facebook_link",
         "label": "t:settings_schema.social-media.settings.social_facebook_link.label",
         "info": "t:settings_schema.social-media.settings.social_facebook_link.info"
