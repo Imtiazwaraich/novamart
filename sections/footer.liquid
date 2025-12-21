@@ -390,7 +390,7 @@
           <small class="copyright__content"
             >&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url -}}
           </small>
-          <small class="copyright__content">{{ powered_by_link }}</small>
+          <small class="copyright__content">&copy; {{ 'now' | date: '%Y' }} Novamart.ae - Dubai, UAE. All rights reserved.</small>
           {%- if section.settings.show_policy -%}
             <ul class="policies list-unstyled">
               {%- for policy in shop.policies -%}
@@ -422,7 +422,7 @@
       </div>
     </div>
   </div>
-</footer>
+ </footer>
 
 {%- if section.settings.enable_country_selector or section.settings.enable_language_selector -%}
   <script src="{{ 'localization-form.js' | asset_url }}" defer="defer"></script>
@@ -488,14 +488,14 @@
         {
           "type": "richtext",
           "id": "subtext",
-          "default": "<p>Majori - Fashion Store</p><p>507-Union Trade Ipsum Doler</p><p>Centre France</p>",
+          "default": "<p><b>NOVAMART.AE - DUBAI</b></p><p>📍 Based in Dubai, UAE</p><p>🚚 Free UAE Delivery</p><p>⏰ 24-48 Hour Dispatch</p>",
           "label": "t:sections.footer.blocks.text.settings.subtext.label"
         },
         {
           "type": "text",
           "id": "email_address",
 		  "label": "t:sections.footer.blocks.text.settings.email_address.label",
-          "default": "hello@blocks.com"
+          "default": "support@novamart.ae"
         },
 		{
           "type": "url",
@@ -506,7 +506,7 @@
           "type": "text",
           "id": "contact_num",
           "label": "t:sections.footer.blocks.text.settings.contact_num.label",
-          "default": "+81 520-150-001"
+          "default": "+971 55-254-9354"
         },
         {
           "type": "url",

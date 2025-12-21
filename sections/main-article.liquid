@@ -43,7 +43,7 @@
 
       {%- when 'title' -%}
         <header class="page-width" {{ block.shopify_attributes }}>
-          <h1 class="article-template__title" itemprop="headline">{{ article.title | escape }}</h1>
+          <h2 class="article-template__title" itemprop="headline">{{ article.title | escape }}</h2>
           {%- if block.settings.blog_show_date -%}
             <span class="circle-divider caption-with-letter-spacing" itemprop="dateCreated pubdate datePublished">
               {{- article.published_at | time_tag: format: 'date' -}}
