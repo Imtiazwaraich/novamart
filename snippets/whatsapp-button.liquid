@@ -1,0 +1,112 @@
+{%- comment -%}
+  WhatsApp Business Floating Button
+  Displays a floating WhatsApp icon that opens a chat with your business number
+{%- endcomment -%}
+
+{%- liquid
+  assign whatsapp_number = settings.whatsapp_number | default: '971501234567'
+  assign whatsapp_message = settings.whatsapp_message | default: 'Hello! I have a question about your products.'
+  assign button_position = settings.whatsapp_position | default: 'bottom-right'
+-%}
+
+<style>
+  .whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    {% if button_position == 'bottom-right' %}
+      bottom: 20px;
+      right: 20px;
+    {% elsif button_position == 'bottom-left' %}
+      bottom: 20px;
+      left: 20px;
+    {% endif %}
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .whatsapp-float:hover {
+    background-color: #128c7e;
+    transform: scale(1.1);
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4);
+  }
+
+  .whatsapp-float svg {
+    width: 35px;
+    height: 35px;
+    fill: white;
+  }
+
+  .whatsapp-tooltip {
+    position: absolute;
+    {% if button_position == 'bottom-right' %}
+      right: 70px;
+    {% elsif button_position == 'bottom-left' %}
+      left: 70px;
+    {% endif %}
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fff;
+    color: #333;
+    padding: 8px 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+    font-size: 14px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+
+  .whatsapp-float:hover .whatsapp-tooltip {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @media screen and (max-width: 768px) {
+    .whatsapp-float {
+      width: 50px;
+      height: 50px;
+      bottom: 15px;
+      {% if button_position == 'bottom-right' %}
+        right: 15px;
+      {% elsif button_position == 'bottom-left' %}
+        left: 15px;
+      {% endif %}
+    }
+
+    .whatsapp-float svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .whatsapp-tooltip {
+      display: none;
+    }
+  }
+</style>
+
+<a 
+  href="https://wa.me/{{ whatsapp_number }}?text={{ whatsapp_message | url_encode }}" 
+  class="whatsapp-float" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  aria-label="Chat on WhatsApp"
+>
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-5.247 1.408 1.417-5.267-0.316-0.522c-1.314-2.148-2.008-4.628-2.008-7.19 0-7.467 6.075-13.533 13.533-13.533s13.533 6.075 13.533 13.533-6.075 13.533-13.533 13.533zM21.933 18.667c-0.333-0.167-1.967-0.967-2.267-1.083-0.3-0.117-0.517-0.167-0.733 0.167s-0.85 1.083-1.042 1.3c-0.192 0.217-0.383 0.242-0.717 0.075s-1.4-0.517-2.667-1.65c-0.983-0.883-1.65-1.975-1.842-2.308s-0.021-0.512 0.146-0.679c0.15-0.146 0.333-0.383 0.5-0.575s0.217-0.333 0.333-0.55c0.117-0.217 0.058-0.408-0.025-0.575s-0.733-1.767-1.008-2.417c-0.267-0.633-0.542-0.55-0.733-0.558-0.192-0.008-0.408-0.008-0.625-0.008s-0.575 0.083-0.875 0.417-1.15 1.125-1.15 2.742 1.175 3.183 1.342 3.4 2.317 3.533 5.608 4.958c0.783 0.342 1.396 0.542 1.875 0.692 0.792 0.25 1.508 0.217 2.075 0.133 0.633-0.092 1.967-0.8 2.242-1.583s0.275-1.442 0.192-1.583-0.3-0.217-0.633-0.383z"/>
+  </svg>
+  <span class="whatsapp-tooltip">{{ 'general.whatsapp.chat_with_us' | t | default: 'Chat with us on WhatsApp' }}</span>
+</a>

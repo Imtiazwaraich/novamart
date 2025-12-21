@@ -1503,6 +1503,45 @@
     ]
   },
   {
+    "name": "WhatsApp Business",
+    "settings": [
+      {
+        "type": "header",
+        "content": "WhatsApp Floating Button"
+      },
+      {
+        "type": "text",
+        "id": "whatsapp_number",
+        "label": "WhatsApp Number",
+        "info": "Enter your WhatsApp number with country code (e.g., 971501234567 for UAE)",
+        "default": "971552549354"
+      },
+      {
+        "type": "text",
+        "id": "whatsapp_message",
+        "label": "Default Message",
+        "info": "Pre-filled message when customers click the button",
+        "default": "Hello! I have a question about your products."
+      },
+      {
+        "type": "select",
+        "id": "whatsapp_position",
+        "label": "Button Position",
+        "options": [
+          {
+            "value": "bottom-right",
+            "label": "Bottom Right"
+          },
+          {
+            "value": "bottom-left",
+            "label": "Bottom Left"
+          }
+        ],
+        "default": "bottom-right"
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.search_input.name",
     "settings": [
       {
