@@ -69,7 +69,10 @@
       "previous_slide": "Slide left",
       "name": "Slider"
     },
-    "view_collection": "View all"
+    "view_collection": "View all",
+    "whatsapp": {
+      "chat_with_us": "Chat with us on WhatsApp"
+    }
   },
   "homepage": {
     "onboarding": {
