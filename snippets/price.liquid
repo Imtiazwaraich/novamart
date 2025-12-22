@@ -20,9 +20,9 @@
   assign compare_at_price = target.compare_at_price
   assign price = target.price | default: 1999
   assign available = target.available | default: false
-  assign money_price = price | money
+  assign money_price = price | money_without_currency
   if settings.currency_code_enabled
-    assign money_price = price | money_with_currency
+    assign money_price = price | money_without_currency
   endif
 
   if target == product and product.price_varies
@@ -49,7 +49,7 @@
     <div class="price__regular">
       <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
       <span class="price-item price-item--regular">
-        {{ money_price }}
+        <img src="{{ 'aed-symbol.png' | asset_url }}" class="currency-symbol" alt="AED" width="14" height="14" style="object-fit: contain; vertical-align: middle; margin-right: 2px;">{{ money_price }}
       </span>
     </div>
     <div class="price__sale">
@@ -57,23 +57,19 @@
         <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
         <span>
           <s class="price-item price-item--regular">
-            {% if settings.currency_code_enabled %}
-              {{ compare_at_price | money_with_currency }}
-            {% else %}
-              {{ compare_at_price | money }}
-            {% endif %}
+            <img src="{{ 'aed-symbol.png' | asset_url }}" class="currency-symbol" alt="AED" width="14" height="14" style="object-fit: contain; vertical-align: middle; margin-right: 2px;">{{ compare_at_price | money_without_currency }}
           </s>
         </span>
       {%- endunless -%}
       <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
       <span class="price-item price-item--sale price-item--last">
-        {{ money_price }}
+        <img src="{{ 'aed-symbol.png' | asset_url }}" class="currency-symbol" alt="AED" width="14" height="14" style="object-fit: contain; vertical-align: middle; margin-right: 2px;">{{ money_price }}
       </span>
     </div>
     <small class="unit-price caption{% if product.selected_or_first_available_variant.unit_price_measurement == nil %} hidden{% endif %}">
       <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
       <span class="price-item price-item--last">
-        <span>{{- product.selected_or_first_available_variant.unit_price | money -}}</span>
+        <span><img src="{{ 'aed-symbol.png' | asset_url }}" class="currency-symbol" alt="AED" width="14" height="14" style="object-fit: contain; vertical-align: middle; margin-right: 2px;">{{- product.selected_or_first_available_variant.unit_price | money_without_currency -}}</span>
         <span aria-hidden="true">/</span>
         <span class="visually-hidden">&nbsp;{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span>
         <span>
