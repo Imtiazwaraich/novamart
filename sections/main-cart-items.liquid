@@ -101,18 +101,18 @@
                           {{ 'products.product.price.regular_price' | t }}
                         </span>
                         <s class="cart-item__old-price product-option">
-                          {{- item.original_price | money_without_currency -}}
+                          {{- item.original_price | money -}}
                         </s>
                         <span class="visually-hidden">
                           {{ 'products.product.price.sale_price' | t }}
                         </span>
                         <strong class="cart-item__final-price product-option">
-                          <img src="{{ 'aed-symbol.png' | asset_url }}" class="currency-symbol" alt="AED" width="14" height="14" style="object-fit: contain; vertical-align: middle; margin-right: 2px;">{{ item.final_price | money_without_currency }}
+                          {{ item.final_price | money }}
                         </strong>
                       </div>
                     {%- else -%}
                       <div class="product-option">
-                        <img src="{{ 'aed-symbol.png' | asset_url }}" class="currency-symbol" alt="AED" width="14" height="14" style="object-fit: contain; vertical-align: middle; margin-right: 2px;">{{ item.original_price | money_without_currency }}
+                        {{ item.original_price | money }}
                       </div>
                     {%- endif -%}
 
@@ -184,26 +184,26 @@
                           </dt>
                           <dd>
                             <s class="cart-item__old-price price price--end">
-                              <img src="{{ 'aed-symbol.png' | asset_url }}" class="currency-symbol" alt="AED" width="14" height="14" style="object-fit: contain; vertical-align: middle; margin-right: 2px;">{{ item.original_line_price | money_without_currency }}
+                              {{ item.original_line_price | money }}
                             </s>
                           </dd>
                           <dt class="visually-hidden">
                             {{ 'products.product.price.sale_price' | t }}
                           </dt>
                           <dd class="price price--end">
-                            <img src="{{ 'aed-symbol.png' | asset_url }}" class="currency-symbol" alt="AED" width="14" height="14" style="object-fit: contain; vertical-align: middle; margin-right: 2px;">{{ item.final_line_price | money_without_currency }}
+                            {{ item.final_line_price | money }}
                           </dd>
                         </dl>
                       {%- else -%}
                         <span class="price price--end">
-                          <img src="{{ 'aed-symbol.png' | asset_url }}" class="currency-symbol" alt="AED" width="14" height="14" style="object-fit: contain; vertical-align: middle; margin-right: 2px;">{{ item.original_line_price | money_without_currency }}
+                          {{ item.original_line_price | money }}
                         </span>
                       {%- endif -%}
 
                       {%- if item.variant.available and item.unit_price_measurement -%}
                         <div class="unit-price caption">
                           <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
-                          <img src="{{ 'aed-symbol.png' | asset_url }}" class="currency-symbol" alt="AED" width="14" height="14" style="object-fit: contain; vertical-align: middle; margin-right: 2px;">{{ item.variant.unit_price | money_without_currency }}
+                          {{ item.variant.unit_price | money }}
                           <span aria-hidden="true">/</span>
                           <span class="visually-hidden"
                             >&nbsp;{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span
@@ -307,19 +307,19 @@
                           </dt>
                           <dd>
                             <s class="cart-item__old-price price price--end">
-                              <img src="{{ 'aed-symbol.png' | asset_url }}" class="currency-symbol" alt="AED" width="14" height="14" style="object-fit: contain; vertical-align: middle; margin-right: 2px;">{{ item.original_line_price | money_without_currency }}
+                              {{ item.original_line_price | money }}
                             </s>
                           </dd>
                           <dt class="visually-hidden">
                             {{ 'products.product.price.sale_price' | t }}
                           </dt>
                           <dd class="price price--end">
-                            <img src="{{ 'aed-symbol.png' | asset_url }}" class="currency-symbol" alt="AED" width="14" height="14" style="object-fit: contain; vertical-align: middle; margin-right: 2px;">{{ item.final_line_price | money_without_currency }}
+                            {{ item.final_line_price | money }}
                           </dd>
                         </dl>
                       {%- else -%}
                         <span class="price price--end">
-                          <img src="{{ 'aed-symbol.png' | asset_url }}" class="currency-symbol" alt="AED" width="14" height="14" style="object-fit: contain; vertical-align: middle; margin-right: 2px;">{{ item.original_line_price | money_without_currency }}
+                          {{ item.original_line_price | money }}
                         </span>
                       {%- endif -%}
 
