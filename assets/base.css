@@ -4483,3 +4483,39 @@ variant-selects {
 .facets__form.facets__form-horizontal .facets__summary span {
   color: var(--color-base-solid-button-labels);
 }
+
+/* RTL Overrides for Arabic Layout */
+[dir="rtl"] .search__button {
+  right: auto;
+  left: var(--inputs-border-width);
+  margin-left: 0;
+  margin-right: 10px;
+}
+[dir="rtl"] .reset__button {
+  right: auto;
+  left: calc(var(--inputs-border-width) + 7.8rem);
+}
+@media screen and (min-width: 576px){
+ [dir="rtl"] .header-wrapper .reset__button {
+	right: auto;
+    left: calc(var(--inputs-border-width) + 11rem);
+  }
+}
+@media screen and (max-width: 575px){
+  [dir="rtl"] .reset__button {
+    right: auto;
+    left: calc(var(--inputs-border-width) + 5.4rem);
+  }
+}
+/* Generic RTL fixes for title underlines and alignment */
+[dir="rtl"] .title:before,
+[dir="rtl"] .title:after,
+[dir="rtl"] .section-heading:before,
+[dir="rtl"] .section-heading:after,
+[dir="rtl"] .inline-richtext:before,
+[dir="rtl"] .inline-richtext:after {
+    left: auto;
+    right: 0;
+}
+[dir="rtl"] .left { text-align: right; }
+[dir="rtl"] .right { text-align: left; }

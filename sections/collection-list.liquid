@@ -134,7 +134,9 @@
 
 <script>
     $(document).ready(function() {
+      var rtl = $('html').attr('dir') == 'rtl';
       $('.collection-list.owl-carousel').owlCarousel({
+        rtl: rtl,
         loop: !0,
         nav: !0,
         dots: !1,

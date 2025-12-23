@@ -60,7 +60,9 @@
 
 <script>
     $(document).ready(function() {
+      var rtl = $('html').attr('dir') == 'rtl';
       $('.logo-bar').owlCarousel({
+        rtl: rtl,
         loop: !0,
         nav: !0,
         dots: !1,
