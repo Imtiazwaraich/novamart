@@ -568,6 +568,7 @@
 {%- endfor -%}
 
 <script>
+  document.addEventListener("DOMContentLoaded", function() {
     $(document).ready(function(){
     	$("#CategoryBox .box-heading").click(function(){
     	$("#CategoryBox #SiteCat").slideToggle(500);
@@ -646,4 +647,5 @@
   }
   $(document).ready(mobileToggleMenu3);
   $(window).resize(function(){mobileToggleMenu3();});
+});
 </script>

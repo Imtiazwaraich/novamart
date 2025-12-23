@@ -773,28 +773,29 @@
 {%- endif -%}
 
 <script>
- $(document).ready(function() {
-  $(".user-background").click(function() {
-      $(".tm_header-dropdown .my-account").slideToggle();
-      $('.tm_header-dropdown').toggleClass('active')
+  document.addEventListener("DOMContentLoaded", function() {
+    $(document).ready(function() {
+      $(".user-background").click(function() {
+          $(".tm_header-dropdown .my-account").slideToggle();
+          $('.tm_header-dropdown').toggleClass('active')
+        });
     });
+
+    function responsivecolumn(){
+      if ($(document).width() <= 989)
+        {
+          $('.header-top .header-top-inner .header-top-left .header__localization').appendTo('.header-bottom .header-bottom-inner');
+          $('.header-top  .header-top-inner .header-top-left .header-top__link').appendTo('#menu-drawer.main-menu .menu-drawer__navigation-container .menu-drawer__navigation');
+        }
+        else
+        {
+          $('.header-bottom .header-bottom-inner .header__localization').appendTo('.header-top .header-top-inner .header-top-left');
+          $('#menu-drawer.main-menu .menu-drawer__navigation-container .menu-drawer__navigation .header-top__link').prependTo('.header-top  .header-top-inner .header-top-left');
+        }
+    }
+    $(document).ready(function(){responsivecolumn();});
+    $(window).resize(function(){responsivecolumn();});
   });
-</script>
-<script>
-  function responsivecolumn(){
-    if ($(document).width() <= 989)
-      {
-        $('.header-top .header-top-inner .header-top-left .header__localization').appendTo('.header-bottom .header-bottom-inner');
-        $('.header-top  .header-top-inner .header-top-left .header-top__link').appendTo('#menu-drawer.main-menu .menu-drawer__navigation-container .menu-drawer__navigation');
-      }
-      else
-      {
-        $('.header-bottom .header-bottom-inner .header__localization').appendTo('.header-top .header-top-inner .header-top-left');
-        $('#menu-drawer.main-menu .menu-drawer__navigation-container .menu-drawer__navigation .header-top__link').prependTo('.header-top  .header-top-inner .header-top-left');
-      }
-  }
-  $(document).ready(function(){responsivecolumn();});
-  $(window).resize(function(){responsivecolumn();});
 </script>  
                     
 
