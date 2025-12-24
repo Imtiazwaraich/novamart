@@ -17,7 +17,7 @@
           "settings": {
             "image": "shopify://shop_images/foldable-drone-camera-banner-for-uae-market.png",
             "heading": "<p>starting at only AED 100</p>",
-            "subheading": "<h2></h2><h2>Capture Stunning </h2><h2>Aerial Footage</h2>",
+            "subheading": "<h2>Capture Stunning </h2><h2>Aerial Footage</h2>",
             "button_label": "Shop Now",
             "link": "shopify://products/e99-drone-camera",
             "button_style_secondary": false,
@@ -211,7 +211,7 @@
         "color_scheme": "background-2",
         "heading": "",
         "heading_size": "h2",
-        "padding_top": 0,
+        "padding_top": 10,
         "padding_bottom": 0
       }
     },
