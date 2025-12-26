@@ -33,7 +33,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/showslide-main1_e24c5715-f89f-4ba6-9eea-9bc10db57eea.webp",
-            "heading": "<h4>Unbeatable Deals</h4><h5><strong>Across All Products</strong></h5>",
+            "heading": "<h1>Unbeatable Deals</h1><h2><strong>Across All Products</strong></h2>",
             "subheading": "",
             "button_label": "shop now",
             "link": "shopify://collections/all",
