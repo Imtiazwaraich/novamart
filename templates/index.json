@@ -16,7 +16,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/main-banner-01.webp",
-            "heading": "<h2>starting at </h2><h2>only AED 100</h2>",
+            "heading": "<h1>starting </h1><h2>only AED 100</h2>",
             "subheading": "",
             "button_label": "shop now",
             "link": "shopify://collections/latest-tech-gadgets",
