@@ -12,8 +12,43 @@
     "7102a354-77b3-460a-8438-43f6be6fdc83": {
       "type": "slideshow",
       "blocks": {
+        "template--18809520881977__7102a354-77b3-460a-8438-43f6be6fdc83-16824275885b402105-0": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/main-banner-01.webp",
+            "heading": "<h2>starting at </h2><h2>only AED 100</h2>",
+            "subheading": "",
+            "button_label": "shop now",
+            "link": "shopify://collections/latest-tech-gadgets",
+            "button_style_secondary": false,
+            "box_align": "middle-left",
+            "show_text_box": true,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "accent-2",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "e4b54d6e-b9c3-472f-bdd2-350edeae84c1": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/showslide-main1_e24c5715-f89f-4ba6-9eea-9bc10db57eea.webp",
+            "heading": "<h4>Unbeatable Deals</h4><h5><strong>Across All Products</strong></h5>",
+            "subheading": "",
+            "button_label": "shop now",
+            "link": "shopify://collections/all",
+            "button_style_secondary": false,
+            "box_align": "middle-left",
+            "show_text_box": true,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "accent-2",
+            "text_alignment_mobile": "center"
+          }
+        },
         "slide_CXy38i": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/foldable-drone-camera-banner-for-uae-market.png",
             "heading": "<p>starting at only AED 100</p>",
@@ -63,48 +98,14 @@
             "color_scheme": "accent-2",
             "text_alignment_mobile": "center"
           }
-        },
-        "template--18809520881977__7102a354-77b3-460a-8438-43f6be6fdc83-16824275885b402105-0": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/main-banner-01.webp",
-            "heading": "<h2>starting at </h2><h2>only AED 100</h2>",
-            "subheading": "",
-            "button_label": "shop now",
-            "link": "shopify://collections/latest-tech-gadgets",
-            "button_style_secondary": false,
-            "box_align": "middle-left",
-            "show_text_box": true,
-            "text_alignment": "left",
-            "image_overlay_opacity": 0,
-            "color_scheme": "accent-2",
-            "text_alignment_mobile": "center"
-          }
-        },
-        "e4b54d6e-b9c3-472f-bdd2-350edeae84c1": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/showslide-main1_e24c5715-f89f-4ba6-9eea-9bc10db57eea.webp",
-            "heading": "<h4>Unbeatable Deals</h4><h5><strong>Across All Products</strong></h5>",
-            "subheading": "",
-            "button_label": "shop now",
-            "link": "shopify://collections/all",
-            "button_style_secondary": false,
-            "box_align": "middle-left",
-            "show_text_box": true,
-            "text_alignment": "left",
-            "image_overlay_opacity": 0,
-            "color_scheme": "accent-2",
-            "text_alignment_mobile": "center"
-          }
         }
       },
       "block_order": [
+        "template--18809520881977__7102a354-77b3-460a-8438-43f6be6fdc83-16824275885b402105-0",
+        "e4b54d6e-b9c3-472f-bdd2-350edeae84c1",
         "slide_CXy38i",
         "slide_zUkz3W",
-        "slide_pmkMGC",
-        "template--18809520881977__7102a354-77b3-460a-8438-43f6be6fdc83-16824275885b402105-0",
-        "e4b54d6e-b9c3-472f-bdd2-350edeae84c1"
+        "slide_pmkMGC"
       ],
       "settings": {
         "layout": "grid",
