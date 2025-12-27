@@ -66,6 +66,7 @@
         },
         "slide_zUkz3W": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/ChristmasFestive_Promotion_Banner.webp",
             "heading": "",
