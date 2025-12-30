@@ -111,8 +111,18 @@ html[dir="rtl"] .box-heading .icon-hamburger {
 /* CRITICAL FIX: Move category box to RIGHT side in desktop RTL */
 @media screen and (min-width: 1270px) {
     html[dir="rtl"] #CategoryBox {
+        order: 3;
+        /* Increase order to push it to the far right */
+    }
+
+    /* Ensure the menu service/banner is in middle */
+    html[dir="rtl"] .menu_service {
         order: 2;
-        /* Move to right if in flex container */
+    }
+
+    /* Nav menu should be first (which appears last in RTL) */
+    html[dir="rtl"] .header__inline-menu {
+        order: 1;
     }
 }
 
@@ -250,6 +260,38 @@ html[dir="rtl"] .slideshow__media {
 html[dir="rtl"] .slideshow__text-box {
     text-align: right;
     align-items: flex-end;
+}
+
+/* CRITICAL: Fix slideshow text wrapper to align RIGHT */
+html[dir="rtl"] .slideshow__text-wrapper.banner__content {
+    justify-content: flex-end;
+    /* Push text to right side */
+}
+
+/* Ensure text alignment classes respect RTL */
+html[dir="rtl"] .slideshow__text--left {
+    text-align: right !important;
+    /* In RTL, "left" becomes "right" */
+}
+
+html[dir="rtl"] .slideshow__text--right {
+    text-align: left !important;
+    /* In RTL, "right" becomes "left" */
+}
+
+/* Fix banner box positioning in RTL */
+html[dir="rtl"] .banner__content--top-left,
+html[dir="rtl"] .banner__content--middle-left,
+html[dir="rtl"] .banner__content--bottom-left {
+    justify-content: flex-end;
+    /* Mirror left to right */
+}
+
+html[dir="rtl"] .banner__content--top-right,
+html[dir="rtl"] .banner__content--middle-right,
+html[dir="rtl"] .banner__content--bottom-right {
+    justify-content: flex-start;
+    /* Mirror right to left */
 }
 
 /* ============================================
