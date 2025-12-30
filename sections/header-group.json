@@ -1,1 +1,111 @@
-{"name":"t:sections.header.name","type":"header","sections":{"announcement-bar":{"type":"announcement-bar","settings":{}},"header-top":{"type":"header-top","blocks":{"a02d152a-9d73-4ae5-8f2b-f12d3096757e":{"type":"header-top","disabled":true,"settings":{"text":"Store Locator","link":"#"}},"51b411cc-03ae-4a85-866a-3d94eeac85f6":{"type":"header-top","settings":{"text":"Order Tracking","link":"https:\/\/www.17track.net\/en"}}},"block_order":["a02d152a-9d73-4ae5-8f2b-f12d3096757e","51b411cc-03ae-4a85-866a-3d94eeac85f6"],"settings":{"enable_country_selector":false,"enable_language_selector":true,"color_scheme":"background-2","headertop_text":"<p>Limited-Time Offers : Winter Season Sale Live Now - <a href=\"\/collections\" title=\"All collections\">Shop Now<\/a><\/p>","padding_top":8,"padding_bottom":8}},"header":{"type":"header","settings":{"logo_position":"middle-left","sticky_header_type":"always","show_line_separator":false,"color_scheme":"background-2","enable_wishlist_icon":true,"enable_compare_icon":true,"wishlist_title":"Wishlist","wishlist_link":"shopify:\/\/pages\/wishlist-management","compare_title":"Compare","compare_link":"shopify:\/\/pages\/compare-products-online","mobile_logo_position":"center","margin_bottom":0,"padding_top":23,"padding_bottom":23}},"header-bottom":{"type":"header-bottom","blocks":{"342d9e9a-241e-4519-8dca-de61d395eea9":{"type":"dropdown","settings":{"categories_title":"SHOP BY CATEGORIES","side-categories":"categories"}},"verticle_nqrmHD":{"type":"verticle","settings":{"categories_title1":"shop by categories","side-categories1":"categories"}}},"block_order":["342d9e9a-241e-4519-8dca-de61d395eea9","verticle_nqrmHD"],"settings":{"color_scheme":"background-2","menu":"main-menu","menu_type_desktop":"mega","menu_img":"shopify:\/\/shop_images\/top-deal_f95d5619-2c6c-414b-94f5-75be5f12fadf.png","menu_service":"Top Deals","link":"shopify:\/\/collections\/all","margin_bottom":0,"padding_top":0,"padding_bottom":0}}},"order":["announcement-bar","header-top","header","header-bottom"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "settings": {}
+    },
+    "header-top": {
+      "type": "header-top",
+      "blocks": {
+        "a02d152a-9d73-4ae5-8f2b-f12d3096757e": {
+          "type": "header-top",
+          "disabled": true,
+          "settings": {
+            "text": "Store Locator",
+            "link": "#"
+          }
+        },
+        "51b411cc-03ae-4a85-866a-3d94eeac85f6": {
+          "type": "header-top",
+          "settings": {
+            "text": "Order Tracking",
+            "link": "https://www.17track.net/en"
+          }
+        }
+      },
+      "block_order": [
+        "a02d152a-9d73-4ae5-8f2b-f12d3096757e",
+        "51b411cc-03ae-4a85-866a-3d94eeac85f6"
+      ],
+      "settings": {
+        "enable_country_selector": false,
+        "enable_language_selector": true,
+        "color_scheme": "background-2",
+        "headertop_text": "<p>Limited-Time Offers : Winter Season Sale Live Now - <a href=\"/collections\" title=\"All collections\">Shop Now</a></p>",
+        "padding_top": 8,
+        "padding_bottom": 8
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_position": "middle-left",
+        "sticky_header_type": "always",
+        "show_line_separator": false,
+        "color_scheme": "background-2",
+        "enable_wishlist_icon": true,
+        "enable_compare_icon": true,
+        "wishlist_title": "Wishlist",
+        "wishlist_link": "shopify://pages/wishlist-management",
+        "compare_title": "Compare",
+        "compare_link": "shopify://pages/compare-products-online",
+        "mobile_logo_position": "center",
+        "margin_bottom": 0,
+        "padding_top": 23,
+        "padding_bottom": 23
+      }
+    },
+    "header-bottom": {
+      "type": "header-bottom",
+      "blocks": {
+        "342d9e9a-241e-4519-8dca-de61d395eea9": {
+          "type": "dropdown",
+          "settings": {
+            "categories_title": "SHOP BY CATEGORIES",
+            "side-categories": "categories"
+          }
+        },
+        "verticle_nqrmHD": {
+          "type": "verticle",
+          "settings": {
+            "categories_title1": "shop by categories",
+            "side-categories1": "categories"
+          }
+        }
+      },
+      "block_order": [
+        "342d9e9a-241e-4519-8dca-de61d395eea9",
+        "verticle_nqrmHD"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "background-2",
+        "menu": "main-menu",
+        "menu_type_desktop": "mega",
+        "menu_img": "shopify://shop_images/top-deal_f95d5619-2c6c-414b-94f5-75be5f12fadf.png",
+        "menu_service": "Top Deals",
+        "link": "shopify://collections/all",
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header-top",
+    "header",
+    "header-bottom"
+  ]
+}
