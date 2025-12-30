@@ -204,11 +204,15 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
+      // Detect if RTL is active
+      var isRTL = document.documentElement.getAttribute('dir') === 'rtl';
+      
       $('.multicolumn-list.owl-carousel').owlCarousel({
         loop: !0,
         nav: !0,
         dots: !1,
         autoplay: !1,
+        rtl: isRTL,
         responsive:{
            0:{
             items: {{ section.settings.columns_mobile | minus: 0 }}

@@ -134,11 +134,13 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
+      var isRTL = document.documentElement.getAttribute('dir') === 'rtl';
       $('.collection-list.owl-carousel').owlCarousel({
         loop: !0,
         nav: !0,
         dots: !1,
         autoplay: !1,
+        rtl: isRTL,
         responsive:{
           0:{
             items:1
