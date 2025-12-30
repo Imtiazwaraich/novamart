@@ -111,18 +111,22 @@ html[dir="rtl"] .box-heading .icon-hamburger {
 /* CRITICAL FIX: Move category box to RIGHT side in desktop RTL */
 @media screen and (min-width: 1270px) {
     html[dir="rtl"] #CategoryBox {
-        order: 3;
-        /* Increase order to push it to the far right */
+        order: 1 !important;
+        /* Order 1 = FAR RIGHT in RTL */
     }
 
-    /* Ensure the menu service/banner is in middle */
-    html[dir="rtl"] .menu_service {
-        order: 2;
-    }
-
-    /* Nav menu should be first (which appears last in RTL) */
+    /* Nav menu in middle */
     html[dir="rtl"] .header__inline-menu {
-        order: 1;
+        order: 2 !important;
+        /* Order 2 = Middle */
+    }
+
+    /* Best Deals on far left */
+    html[dir="rtl"] .menu_service {
+        order: 3 !important;
+        /* Order 3 = FAR LEFT in RTL */
+        float: none !important;
+        /* Remove float that pins it right */
     }
 }
 
