@@ -24,6 +24,12 @@ html[dir="rtl"] body {
 /* NOTE: Navigation menu items will naturally flow RTL in dir="rtl" mode.
    No flex-direction overrides needed - browser handles it automatically. */
 
+/* CRITICAL: Enable flexbox for header container in RTL */
+html[dir="rtl"] .header-bottom .page-width {
+    display: flex !important;
+    align-items: center;
+}
+
 /* Flip menu icons */
 html[dir="rtl"] .icon-caret,
 html[dir="rtl"] .icon-arrow {
