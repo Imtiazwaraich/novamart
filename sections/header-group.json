@@ -78,6 +78,7 @@
         },
         "verticle_nqrmHD": {
           "type": "verticle",
+          "disabled": true,
           "settings": {
             "categories_title1": "shop by categories",
             "side-categories1": "categories"
