@@ -115,6 +115,14 @@ html[dir="rtl"] .box-heading .icon-hamburger {
     margin-left: 15px;
 }
 
+/* CRITICAL FIX: Move category box to RIGHT side in desktop RTL */
+@media screen and (min-width: 1270px) {
+    html[dir="rtl"] #CategoryBox {
+        order: 2;
+        /* Move to right if in flex container */
+    }
+}
+
 /* Category dropdown positioning */
 html[dir="rtl"] .site-nav__dropdown {
     left: auto;
@@ -142,6 +150,24 @@ html[dir="rtl"] .site-cat--has-dropdown .icon.icon-caret {
 html[dir="rtl"] .site-cat__link,
 html[dir="rtl"] .site-nav__link {
     text-align: right;
+}
+
+/* CRITICAL FIX: Reverse the entire header-bottom-inner container layout */
+html[dir="rtl"] .header-bottom .page-width {
+    direction: rtl;
+}
+
+html[dir="rtl"] .header-bottom-inner {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+}
+
+/* Ensure menu service stays on correct side */
+html[dir="rtl"] .menu_service {
+    order: -1;
+    margin-left: 0;
+    margin-right: auto;
 }
 
 /* Vertical menu drawer (mobile floating button) */
@@ -225,6 +251,30 @@ html[dir="rtl"] .banner__text {
 
 html[dir="rtl"] .banner__buttons {
     justify-content: flex-end;
+}
+
+/* CRITICAL FIX: Slideshow/Homepage Banner RTL Layout */
+html[dir="rtl"] .slideshow .slider__slide {
+    direction: rtl;
+}
+
+html[dir="rtl"] .slideshow__content {
+    text-align: right;
+}
+
+html[dir="rtl"] .slider--everywhere {
+    direction: rtl;
+}
+
+/* Fix for slideshow media positioning */
+html[dir="rtl"] .slideshow__media {
+    direction: rtl;
+}
+
+/* Ensure slideshow text box aligns right */
+html[dir="rtl"] .slideshow__text-box {
+    text-align: right;
+    align-items: flex-end;
 }
 
 /* ============================================
