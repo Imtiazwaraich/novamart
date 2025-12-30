@@ -21,15 +21,8 @@ html[dir="rtl"] body {
    2. HEADER & NAVIGATION
    ============================================ */
 
-/* Reverse main header layout */
-html[dir="rtl"] .header-bottom-inner {
-    flex-direction: row-reverse;
-}
-
-/* Reverse navigation menu items */
-html[dir="rtl"] .header__inline-menu .list-menu {
-    flex-direction: row-reverse;
-}
+/* NOTE: Navigation menu items will naturally flow RTL in dir="rtl" mode.
+   No flex-direction overrides needed - browser handles it automatically. */
 
 /* Flip menu icons */
 html[dir="rtl"] .icon-caret,
@@ -150,24 +143,6 @@ html[dir="rtl"] .site-cat--has-dropdown .icon.icon-caret {
 html[dir="rtl"] .site-cat__link,
 html[dir="rtl"] .site-nav__link {
     text-align: right;
-}
-
-/* CRITICAL FIX: Reverse the entire header-bottom-inner container layout */
-html[dir="rtl"] .header-bottom .page-width {
-    direction: rtl;
-}
-
-html[dir="rtl"] .header-bottom-inner {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-start;
-}
-
-/* Ensure menu service stays on correct side */
-html[dir="rtl"] .menu_service {
-    order: -1;
-    margin-left: 0;
-    margin-right: auto;
 }
 
 /* Vertical menu drawer (mobile floating button) */
