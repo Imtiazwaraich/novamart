@@ -188,6 +188,21 @@ html[dir="rtl"] #CategoryBox.active #SiteCat {
     transform: translate(0%);
 }
 
+/* CRITICAL FIX: Keep category menu permanently open on desktop */
+@media screen and (min-width: 990px) {
+    html[dir="rtl"] #SiteCat {
+        display: block !important;
+        /* Force menu to stay open */
+        transform: none !important;
+        /* Stop it from sliding off-screen */
+        right: 0 !important;
+        /* Align to right edge */
+        left: auto !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+}
+
 html[dir="rtl"] #CategoryBox .icon.icon-close {
     right: auto;
     left: 20px;
@@ -215,6 +230,27 @@ html[dir="rtl"] .owl-nav .owl-prev {
 html[dir="rtl"] .owl-nav .owl-next {
     right: auto;
     left: 0;
+}
+
+/* CRITICAL FIX: Move navigation to LEFT to avoid title overlap */
+html[dir="rtl"] .owl-nav {
+    right: auto !important;
+    left: 0 !important;
+    display: flex;
+    gap: 5px;
+}
+
+/* Ensure title stays on RIGHT */
+html[dir="rtl"] .title-wrapper-with-link .title,
+html[dir="rtl"] .section-wrapper-with-link .title {
+    text-align: right;
+}
+
+/* Fix underline position for RTL titles */
+html[dir="rtl"] .title-wrapper-with-link .title:after,
+html[dir="rtl"] .section-wrapper-with-link .title:after {
+    right: 0 !important;
+    left: auto !important;
 }
 
 /* Flip arrow icons inside nav buttons */
