@@ -92,7 +92,7 @@
                       <a href="{{ block.settings.email }}" class="email list-menu__item--link" target="_Self">
                         {{- block.settings.email_address -}}
                       </a>
-                      <li class="contact list-menu__item--link">
+                      <li class="contact list-menu__item--link" dir="ltr">
                         <span>{{ block.settings.contact_num }}</span>
                       </li>
                       {%- if block.settings.contact_info != blank -%}
@@ -124,7 +124,7 @@
                       {{- block.settings.email_address -}}
                     </a>
                     {%- if block.settings.contact_num != blank -%}
-                      <a href="{{ block.settings.contact }}" class="contact list-menu__item--link" target="_Self">
+                      <a href="{{ block.settings.contact }}" class="contact list-menu__item--link" target="_Self" dir="ltr">
                         {{- block.settings.contact_num -}}
                       </a>
                     {% endif %}
