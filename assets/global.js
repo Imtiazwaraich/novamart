@@ -16,16 +16,20 @@ function countDownIni(countdown) {
         countdown.html(
           event.strftime(
             '<span class="countdown"><span class="time">%D</span><span class="time-txt">Days</span></span>' +
-              '<span class="countdown"><span class="time">%H</span><span class="time-txt">Hrs</span></span>' +
-              '<span class="countdown"><span class="time">%M</span><span class="time-txt">Min</span></span>' +
-              '<span class="countdown"><span class="time">%S</span><span class="time-txt">Sec</span></span>'
+            '<span class="countdown"><span class="time">%H</span><span class="time-txt">Hrs</span></span>' +
+            '<span class="countdown"><span class="time">%M</span><span class="time-txt">Min</span></span>' +
+            '<span class="countdown"><span class="time">%S</span><span class="time-txt">Sec</span></span>'
           )
         );
       });
     }
   });
 }
-countDownIni(".flip-countdown,.js-flip-countdown");
+try {
+  countDownIni(".flip-countdown,.js-flip-countdown");
+} catch (e) {
+  console.log("Countdown error logged:", e);
+}
 
 /* Scroll Horizontally */
 function horizontalScroll() {
@@ -521,9 +525,9 @@ class MenuDrawer extends HTMLElement {
 
     openDetailsElement === this.mainDetailsToggle
       ? this.closeMenuDrawer(
-          event,
-          this.mainDetailsToggle.querySelector("summary")
-        )
+        event,
+        this.mainDetailsToggle.querySelector("summary")
+      )
       : this.closeSubmenu(openDetailsElement);
   }
 
@@ -565,9 +569,9 @@ class MenuDrawer extends HTMLElement {
         !reducedMotion || reducedMotion.matches
           ? addTrapFocus()
           : summaryElement.nextElementSibling.addEventListener(
-              "transitionend",
-              addTrapFocus
-            );
+            "transitionend",
+            addTrapFocus
+          );
       }, 100);
     }
   }
@@ -665,9 +669,9 @@ class HeaderDrawer extends MenuDrawer {
     this.header = this.header || document.querySelector(".section-header");
     this.borderOffset =
       this.borderOffset ||
-      this.closest(".header-wrapper").classList.contains(
-        "header-wrapper--border-bottom"
-      )
+        this.closest(".header-wrapper").classList.contains(
+          "header-wrapper--border-bottom"
+        )
         ? 1
         : 0;
     document.documentElement.style.setProperty(
@@ -844,7 +848,7 @@ class SliderComponent extends HTMLElement {
       this.sliderItemsToShow[0].offsetLeft;
     this.slidesPerPage = Math.floor(
       (this.slider.clientWidth - this.sliderItemsToShow[0].offsetLeft) /
-        this.sliderItemOffset
+      this.sliderItemOffset
     );
     this.totalPages = this.sliderItemsToShow.length - this.slidesPerPage + 1;
     this.update();
@@ -1062,13 +1066,15 @@ class SlideshowComponent extends SliderComponent {
   }
 
   autoRotateSlides() {
+    const isRTL = document.dir === 'rtl';
     const slideScrollPosition =
       this.currentPage === this.sliderItems.length
         ? 0
         : this.slider.scrollLeft +
-          this.slider.querySelector(".slideshow__slide").clientWidth;
+        (isRTL ? -1 : 1) * this.slider.querySelector(".slideshow__slide").clientWidth;
     this.slider.scrollTo({
       left: slideScrollPosition,
+      behavior: 'smooth'
     });
   }
 
@@ -1098,9 +1104,9 @@ class SlideshowComponent extends SliderComponent {
     const slideScrollPosition =
       this.slider.scrollLeft +
       this.sliderFirstItemNode.clientWidth *
-        (this.sliderControlLinksArray.indexOf(event.currentTarget) +
-          1 -
-          this.currentPage);
+      (this.sliderControlLinksArray.indexOf(event.currentTarget) +
+        1 -
+        this.currentPage);
     this.slider.scrollTo({
       left: slideScrollPosition,
     });
@@ -1277,10 +1283,9 @@ class VariantSelects extends HTMLElement {
       : this.dataset.section;
 
     fetch(
-      `${this.dataset.url}?variant=${requestedVariantId}&section_id=${
-        this.dataset.originalSection
-          ? this.dataset.originalSection
-          : this.dataset.section
+      `${this.dataset.url}?variant=${requestedVariantId}&section_id=${this.dataset.originalSection
+        ? this.dataset.originalSection
+        : this.dataset.section
       }`
     )
       .then((response) => response.text())
@@ -1293,27 +1298,24 @@ class VariantSelects extends HTMLElement {
           `price-${this.dataset.section}`
         );
         const source = html.getElementById(
-          `price-${
-            this.dataset.originalSection
-              ? this.dataset.originalSection
-              : this.dataset.section
+          `price-${this.dataset.originalSection
+            ? this.dataset.originalSection
+            : this.dataset.section
           }`
         );
         const skuSource = html.getElementById(
-          `Sku-${
-            this.dataset.originalSection
-              ? this.dataset.originalSection
-              : this.dataset.section
+          `Sku-${this.dataset.originalSection
+            ? this.dataset.originalSection
+            : this.dataset.section
           }`
         );
         const skuDestination = document.getElementById(
           `Sku-${this.dataset.section}`
         );
         const inventorySource = html.getElementById(
-          `Inventory-${
-            this.dataset.originalSection
-              ? this.dataset.originalSection
-              : this.dataset.section
+          `Inventory-${this.dataset.originalSection
+            ? this.dataset.originalSection
+            : this.dataset.section
           }`
         );
         const inventoryDestination = document.getElementById(
@@ -1430,7 +1432,7 @@ class VariantRadios extends VariantSelects {
 
   updateSelectionMetadata({ target }) {
     const { value, tagName } = target;
-   if (tagName === 'INPUT' && target.type === 'radio') {
+    if (tagName === 'INPUT' && target.type === 'radio') {
       const selectedSwatchValue = target.closest(`.product-form__input`).querySelector('[data-selected-value]');
       if (selectedSwatchValue) selectedSwatchValue.innerHTML = value;
     }
