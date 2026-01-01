@@ -149,7 +149,9 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
+      var isRTL = $('html').attr('dir') == 'rtl';
       $('.blog__posts.owl-carousel').owlCarousel({
+        rtl: isRTL,
         loop: !0,
         nav: !0,
         dots: !1,
