@@ -181,7 +181,7 @@
             "icon": "shopify://shop_images/service-2.png",
             "service-title": "Return Back Items",
             "service-subtitle": "Returns With In 7 Days",
-            "button_link": "#"
+            "button_link": "shopify://policies/refund-policy"
           }
         },
         "0398b6e4-1b26-4e98-bf04-c13c27ff0c99": {
