@@ -197,8 +197,8 @@
           "type": "service_image",
           "settings": {
             "icon": "shopify://shop_images/service-4.png",
-            "service-title": "24/7 Support Services",
-            "service-subtitle": "Any Time Support",
+            "service-title": "Support Services",
+            "service-subtitle": "WhataApp or Email",
             "button_link": "shopify://pages/contact-us-page"
           }
         }
