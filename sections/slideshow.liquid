@@ -144,9 +144,6 @@
                 assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
               endif
             -%}
-            {{
-              block.settings.image
-              | image_url: width: 1100
             {%- liquid
               assign loading_strategy = 'lazy'
               assign fetch_priority = 'auto'
@@ -173,7 +170,7 @@
             {%- endif -%}
             {%- if block.settings.subheading != blank -%}
               <div class="banner__text rte" {{ block.shopify_attributes }}>
-                {{ block.settings.subheading }}
+                {{ block.settings.subheading | replace: '<h1', '<h2' | replace: '</h1>', '</h2>' }}
               </div>
             {%- endif -%}
             {%- if block.settings.button_label != blank -%}
