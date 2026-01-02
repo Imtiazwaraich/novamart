@@ -171,7 +171,7 @@
           "settings": {
             "icon": "shopify://shop_images/service-1.png",
             "service-title": "UAE Shipping",
-            "service-subtitle": "All Orders are Free",
+            "service-subtitle": "Delivery 1-2 Days",
             "button_link": "shopify://collections/all"
           }
         },
@@ -181,7 +181,7 @@
             "icon": "shopify://shop_images/service-2.png",
             "service-title": "Return Back Items",
             "service-subtitle": "Returns With In 7 Days",
-            "button_link": "#"
+            "button_link": "shopify://policies/refund-policy"
           }
         },
         "0398b6e4-1b26-4e98-bf04-c13c27ff0c99": {
@@ -197,8 +197,8 @@
           "type": "service_image",
           "settings": {
             "icon": "shopify://shop_images/service-4.png",
-            "service-title": "24/7 Support Services",
-            "service-subtitle": "Any Time Support",
+            "service-title": "Support Services",
+            "service-subtitle": "WhataApp or Email",
             "button_link": "shopify://pages/contact-us-page"
           }
         }
@@ -492,14 +492,14 @@
         "template--18809520881977__6efd2249-7b10-44ed-882a-acf545a44a94-168303039831dadad4-0": {
           "type": "heading",
           "settings": {
-            "heading": "Free Shipping",
+            "heading": "1-2 Days Shipping",
             "heading_size": "h1"
           }
         },
         "template--18809520881977__6efd2249-7b10-44ed-882a-acf545a44a94-168303039831dadad4-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Free delivery now on your all orders.</p>"
+            "text": "<p> Deliver to all Emriates in UAE.</p>"
           }
         },
         "template--18809520881977__6efd2249-7b10-44ed-882a-acf545a44a94-168303039831dadad4-2": {
