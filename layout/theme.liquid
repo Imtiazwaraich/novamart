@@ -283,25 +283,9 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
-    <script id='merchantWidgetScript'
-            src="https://www.gstatic.com/shopping/merchant/merchantwidget.js"
-            defer>
-    </script>
-    <script type="text/javascript">
-      merchantWidgetScript.addEventListener('load', function () {
-        merchantwidget.start({
-         position: 'RIGHT_BOTTOM'
-       });
-      });
-    </script>
-    <script src="https://analytics.ahrefs.com/analytics.js" data-key="WbA+eZRUo8z/JUxfM0ylsg" async></script>
-    <script>
-  var ahrefs_analytics_script = document.createElement('script');
-  ahrefs_analytics_script.async = true;
-  ahrefs_analytics_script.src = 'https://analytics.ahrefs.com/analytics.js';
-  ahrefs_analytics_script.setAttribute('data-key', 'WbA+eZRUo8z/JUxfM0ylsg');
-  document.getElementsByTagName('head')[0].appendChild(ahrefs_analytics_script);
-</script>
+
+
+
 </head>
 
   <body class="gradient template-{{ request.page_type | handle }}">
@@ -423,5 +407,34 @@
     {%- comment -%} WhatsApp Business Floating Button {%- endcomment -%}
     {% render 'whatsapp-button' %}
 
+    <script>
+      function loadDeferredScripts() {
+        if (window.deferredScriptsLoaded) return;
+        window.deferredScriptsLoaded = true;
+
+        // Ahrefs Analytics
+        var ahrefsScript = document.createElement('script');
+        ahrefsScript.src = 'https://analytics.ahrefs.com/analytics.js';
+        ahrefsScript.setAttribute('data-key', 'WbA+eZRUo8z/JUxfM0ylsg');
+        ahrefsScript.async = true;
+        document.body.appendChild(ahrefsScript);
+
+        // Merchant Widget
+        var merchantScript = document.createElement('script');
+        merchantScript.src = 'https://www.gstatic.com/shopping/merchant/merchantwidget.js';
+        merchantScript.defer = true;
+        merchantScript.onload = function() {
+           if (typeof merchantwidget !== 'undefined') {
+             merchantwidget.start({ position: 'RIGHT_BOTTOM' });
+           }
+        };
+        document.body.appendChild(merchantScript);
+      }
+
+      window.addEventListener('scroll', function() { loadDeferredScripts(); }, {once:true});
+      window.addEventListener('mousemove', function() { loadDeferredScripts(); }, {once:true});
+      window.addEventListener('touchstart', function() { loadDeferredScripts(); }, {once:true});
+      setTimeout(function() { loadDeferredScripts(); }, 6000); // Fallback
+    </script>
     </body>
 </html>
