@@ -737,6 +737,14 @@
         "@type": "Brand",
         "name": {{ product.vendor | json }}
       },
+      {%- if product.metafields.reviews.rating.value != blank -%}
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "{{ product.metafields.reviews.rating.value }}",
+          "reviewCount": "{{ product.metafields.reviews.rating_count }}",
+          "bestRating": "{{ product.metafields.reviews.rating.value.scale_max }}"
+        },
+      {%- endif -%}
       "offers": [
         {%- for variant in product.variants -%}
           {
