@@ -57,8 +57,7 @@
     <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'countdown.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ 'owl.carousel.min.js' | asset_url }}" defer="defer"></script>
-    {{ 'owl.carousel.css' | asset_url | stylesheet_tag }}
+
 
     {{ content_for_header }}
 
@@ -406,6 +405,10 @@
 
     {%- comment -%} WhatsApp Business Floating Button {%- endcomment -%}
     {% render 'whatsapp-button' %}
+
+    <script src="{{ 'owl.carousel.min.js' | asset_url }}" defer="defer"></script>
+    <link rel="stylesheet" href="{{ 'owl.carousel.css' | asset_url }}" media="print" onload="this.media='all'">
+    <noscript>{{ 'owl.carousel.css' | asset_url | stylesheet_tag }}</noscript>
 
     <script>
       function loadDeferredScripts() {
