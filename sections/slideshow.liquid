@@ -12,6 +12,13 @@
         content: '';
         display: block;
       }
+      /* Strict CLS Fix: Override theme default heights on mobile */
+      #Slider-{{ section.id }},
+      #Slider-{{ section.id }} .media,
+      #Slider-{{ section.id }} .banner__content {
+        min-height: 0 !important;
+        height: auto !important;
+      }
     }
   {%- endstyle -%}
 {%- endif -%}
