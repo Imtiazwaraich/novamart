@@ -235,6 +235,11 @@
         "type": "shopify://apps/microsoft-clarity/blocks/brandAgents_js/31c3d126-8116-4b4a-8ba1-baeda7c4aeea",
         "disabled": false,
         "settings": {}
+      },
+      "9923460718370264225": {
+        "type": "shopify://apps/ns-tiktok-pixels-tiktok-ads/blocks/tiktok_pixel/d10ac1a2-b8f2-4f9d-8876-00002c977084",
+        "disabled": false,
+        "settings": {}
       }
     }
   },
