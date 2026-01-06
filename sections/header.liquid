@@ -714,7 +714,7 @@
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
-    "@type": ["Organization", "LocalBusiness"],
+    "@type": "Organization",
     "name": {{ shop.name | json }},
     {% if settings.logo %}
       "logo": {{ settings.logo | image_url: width: 500 | prepend: "https:" | json }},
