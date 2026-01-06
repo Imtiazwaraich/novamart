@@ -28,9 +28,6 @@ slideshow-component .slideshow__controls {
   font-size: 0px;
   display: block;
   line-height: 0;
-  width: 0;
-  height: 0;
-  overflow: hidden;
 }
 
 .owl-carousel .owl-nav span::after {

@@ -261,8 +261,8 @@
 }
 
 .owl-carousel .owl-nav span {
-  font-size: 0;
-  line-height: 0;
+  font-size: 34px;
+  line-height: 17px;
   color: var(--color-base-accent-2);
 }
 
